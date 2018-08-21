@@ -1,0 +1,70 @@
+@import 'utils';
+
+.button {
+  display: inline-block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  
+  // default: 파란색 버튼
+  &.default {
+    background: $oc-blue-6;
+    &:hover {
+      background: $oc-blue-5;
+    }
+    &:active {
+      background: $oc-blue-6;
+    }
+  }
+
+
+  &.gray {
+    background: $oc-gray-7;
+    &:hover {
+      background: $oc-gray-6;
+    }
+    &:active {
+      background: $oc-gray-7;
+    }
+  }
+
+
+  &.outline {
+    border: solid 2px white;
+    border-radius: 2px;
+    &:hover {
+      background: white;
+      color: $oc-blue-6;
+    }
+    &:active {
+      background: rgba(255,255,255,0.85);
+      border: solid 2px rgba(255,255,255,0.85);
+    }
+  }
+
+  &:hover {
+    @include material-shadow(2,0.5)
+  }
+
+  &.disabled {
+    background: $oc-gray-4;
+    color: $oc-gray-6;
+    cursor: default;
+    
+    &:hover, &:active {
+      box-shadow: none;
+      background: $oc-gray-4;
+    }
+  }
+
+  // 버튼 두 개 이상이 함께 있다면 중간 여백
+  & + & {
+    margin-left: 0.5rem;
+  }
+}
