@@ -1,0 +1,57 @@
+@import 'utils';
+
+.post-list {
+
+  .post-item {
+    padding: 1.5rem;
+    transition: all .15s ease-in;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin: 0;
+      color: $oc-gray-8;
+
+      a {
+        transition: all .15s ease-in;
+        border-bottom: solid 1px transparent;
+      }
+      a:hover {
+        color: $oc-blue-6;
+        border-bottom: solid 1px $oc-blue-6;
+      }
+    }
+
+    .date {
+      font-size: 0.85rem;
+      color: $oc-gray-5;
+    }
+
+    p {
+      font-weight: 300;
+      color: $oc-gray-7;
+    }
+
+    .tags {
+      font-size: 0.85rem;
+      color: $oc-blue-6;
+
+      a {
+        &:hover {
+          color: $oc-blue-5;
+        }
+      }
+      a + a {
+        margin-left: 0.25rem;
+      }
+    }
+
+    &:hover {
+      background: rgba($oc-blue-6, 0.05);
+    }
+  }
+
+  .post-item + .post-item {
+    border-top: solid 1px $oc-gray-3;
+  }
+}
