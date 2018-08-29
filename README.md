@@ -5,6 +5,7 @@
 ### **blog-frontend**
 
 - 20장 블로그 프로젝트
+- 21장 프로젝트에서 API 연동
 
 ### **blog-backend**
 
