@@ -4,9 +4,9 @@ const postsCtrl = require('./posts.ctrl');
 const posts = new Router();
 
 posts.get('/', postsCtrl.list);
-posts.post('/', postsCtrl.write);
 posts.get('/:id', postsCtrl.checkObjectid, postsCtrl.read);
-posts.delete('/:id', postsCtrl.checkObjectid, postsCtrl.remove);
-posts.patch('/:id', postsCtrl.checkObjectid, postsCtrl.update);
+posts.post('/', postsCtrl.checkLogin, postsCtrl.write);
+posts.delete('/:id', postsCtrl.checkLogin, postsCtrl.checkObjectid, postsCtrl.remove);
+posts.patch('/:id', postsCtrl.checkLogin, postsCtrl.checkObjectid, postsCtrl.update);
 
 module.exports = posts;
